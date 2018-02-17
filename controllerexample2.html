@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script src="js/angular.min.js"></script>
+		<script>
+				var addApp = angular.module("addApp",[]);
+				addApp.controller("addingTwoNumbers",function($scope){
+					$scope.add={
+						num1 : "1",
+						num2 : "2",
+						addTwoNums: function(){
+							var numbs = $scope.add;
+							return (numbs.num1 + numbs.num2);
+						}
+					};
+				});
+		</script>
+	</head>
+	<body>
+			<div ng-app="addApp" ng-controller="addingTwoNumbers">
+				<input type="text" ng-model="add.num1" />
+				<input type="text" ng-model="add.num2" />
+				<p>Addition is : {{add.addTwoNums()}}</span>
+			</div>
+	</body>
+</html>
